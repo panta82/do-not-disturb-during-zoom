@@ -6,6 +6,9 @@
 	"scripts": {
 		"start": "node ./bin/index.js"
 	},
+  "bin": {
+    "do-not-disturb-during-zoom": "./bin/index.js"
+  },
 	"devDependencies": {
 		"prettier": "latest"
 	},
