@@ -1,6 +1,6 @@
 {
 	"name": "do-not-disturb-during-zoom",
-	"version": "0.1",
+	"version": "0.1.0",
 	"description": "Enable do-not-disturb during zoom meetings",
 	"main": "./bin/index.js",
 	"scripts": {
