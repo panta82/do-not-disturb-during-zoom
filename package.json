@@ -1,10 +1,10 @@
 {
 	"name": "do-not-disturb-during-zoom",
 	"version": "0.0.1",
-	"description": "Project do-not-disturb-during-zoom",
-	"main": "index.js",
+	"description": "Enable do-not-disturb during zoom meetings",
+	"main": "./bin/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node ./bin/index.js"
 	},
 	"devDependencies": {
 		"prettier": "latest"
