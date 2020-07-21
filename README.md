@@ -6,8 +6,6 @@ So far only works on XFCE linux.
 
 ### Setup
 
-There are no node-module requirements.
-
 ```
 npm install -g do-not-disturb-during-zoom
 ```
