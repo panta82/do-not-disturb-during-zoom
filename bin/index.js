@@ -20,7 +20,7 @@ let stopSignal = false;
 process.once('SIGINT', onExit);
 process.once('SIGTERM', onExit);
 
-startUpdateLoop().catch(onFatalError);
+updateLoop().catch(onFatalError);
 
 // *********************************************************************************************************************
 
@@ -69,7 +69,7 @@ async function isZoomMeetingOn() {
 
 async function update() {
   process.stdout.write('.');
-  
+
   const shouldBeMuted = await isZoomMeetingOn();
   
   if (!shouldBeMuted && muted) {
@@ -97,9 +97,15 @@ async function update() {
   // Nothing else needs to be done
 }
 
-async function startUpdateLoop() {
+async function updateLoop() {
   while (!stopSignal) {
-    await update();
+    try {
+      await update();
+    }
+    catch (err) {
+      console.error(`Update failed: ${err.message || err}`);
+      console.error(err.stack);
+    }
     if (stopSignal) {
       break;
     }
