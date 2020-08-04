@@ -1,21 +1,21 @@
 {
 	"name": "do-not-disturb-during-zoom",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Enable do-not-disturb during zoom meetings",
 	"main": "./bin/index.js",
 	"scripts": {
 		"start": "node ./bin/index.js"
 	},
-  "bin": {
-    "do-not-disturb-during-zoom": "./bin/index.js"
-  },
+	"bin": {
+		"do-not-disturb-during-zoom": "./bin/index.js"
+	},
 	"devDependencies": {
 		"prettier": "latest"
 	},
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:panta82/do-not-disturb-during-zoom.git"
-  },
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:panta82/do-not-disturb-during-zoom.git"
+	},
 	"keywords": [],
 	"author": "",
 	"license": "MIT"
