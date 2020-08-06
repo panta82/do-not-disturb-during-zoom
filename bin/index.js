@@ -67,6 +67,10 @@ async function isZoomMeetingOn() {
   return isZoomMeetingOn;
 }
 
+async function showNotification(title, message, duration = 10000) {
+  await exec(`notify-send -t ${duration} "${title.replace(/"/g, '\\"')}" "${message.replace(/"/g, '\\"')}"`);
+}
+
 async function update() {
   process.stdout.write('.');
 
@@ -75,6 +79,7 @@ async function update() {
   if (!shouldBeMuted && muted) {
     // Unmute
     await setDoNotDisturbState(false);
+    await showNotification('Notifications unmuted', 'Do-not-disturb mode deactivated, you will receive notifications again.');
     muted = false;
     console.log('\nUnmuted notifications');
     return;
@@ -90,6 +95,7 @@ async function update() {
     
     muted = true;
     await setDoNotDisturbState(true);
+    await showNotification('Notifications muted', 'Do-not-disturb mode activated during your Zoom call.');
     console.log('\nMuted notifications');
     return;
   }
